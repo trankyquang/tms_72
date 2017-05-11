@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: tms_27_development
+
+test:
+  <<: *default
+  database: tms_27_test
+
+production:
+  <<: *default
+  database: tms_27_production
+  username: tms_27
+  password: <%= ENV['TMS_27_DATABASE_PASSWORD'] %>

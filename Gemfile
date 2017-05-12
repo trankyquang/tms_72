@@ -14,6 +14,15 @@ gem "coffee-rails", "~> 4.2"
 gem "jquery-rails"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
+gem "carrierwave", "0.11.2"
+gem "mini_magick", "4.5.1"
+gem "fog"
+gem "bootstrap-sass", "3.3.6"
+gem "kaminari"
+gem "ransack"
+gem "bootstrap-kaminari-views"
+gem "devise"
+gem "config"
 
 group :development, :test do
   gem "byebug", platform: :mri
@@ -26,4 +35,4 @@ group :development do
   gem "spring-watcher-listen", "~> 2.0.0"
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

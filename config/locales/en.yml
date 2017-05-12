@@ -1,2 +1,11 @@
-title_project: Tms27
-must_be_after_the_start_date: Must be after the start date!
+en:
+  title_project: "Tms27"
+  must_be_after_the_start_date: "Must be after the start date!"
+  home_title: " Home"
+  course_title: " Course"
+  login: " Login"
+  account: "Account"
+  view_profile: " View Profile"
+  edit_profile: " Edit Profile"
+  logout: " Logout"
+  copy_right: "Copy right © 2017"

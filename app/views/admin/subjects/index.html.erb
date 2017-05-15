@@ -1,0 +1,37 @@
+<section id="service" class="admin-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 padding-0 margin-bottom-20">
+        <h3 class="animated fadeInLeft"><%= t "subject.all_subjects" %></h3>
+      </div>
+      <div class = "row margin-bot-20">
+        <div class="form-group">
+          <div class="col-md-4">
+            <%= link_to new_admin_subject_path, class: "btn btn-info" do %>
+              <%= t "subject.create" %>
+              <span class="glyphicon glyphicon-plus"></span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="responsive-table">
+        <table id="table_list" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center"><%= t "subject.name" %></th>
+              <th class="text-center"><%= t "subject.description" %></th>
+              <th class="text-center"><%= t "subject.created_at" %></th>
+              <th class="text-center"><%= t "subject.view" %></th>
+              <th class="text-center"><%= t "subject.edit" %></th>
+              <th class="text-center"><%= t "subject.delete" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @subjects %>
+            <%= paginate @subjects, theme: "twitter-bootstrap-3" %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

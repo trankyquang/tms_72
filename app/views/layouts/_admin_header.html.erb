@@ -1,0 +1,37 @@
+<header id="navigation" class = "navbar-fixed-top">
+  <div class = "container">
+    <div class = "navbar-header">
+      <button type="button" class = "navbar-toggle" data-toggle="collapse"
+        data-target=".navbar-collapse">
+        <span class = "sr-only"></span>
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+        <span class = "icon-bar"></span>
+      </button>
+      <h1 class = "navbar-brand">
+        <%= link_to image_tag("logo.png"), "#" %>
+      </h1>
+    </div>
+    <nav class = "collapse navigation navbar-collapse navbar-right"
+      role="navigation">
+      <ul id="nav" class = "nav navbar-nav">
+        <li><%= link_to t("admin_header.home"), "#" %></li>
+        <li><%= link_to t("admin_header.courses"), "#" %></li>
+        <li><%= link_to t("admin_header.subjects"), admin_subjects_path %></li>
+        <li><%= link_to t("admin_header.trainees"), "#" %></li>
+        <li class="dropdown">
+          <%= link_to "#", class: "dropdown-toggle",
+            data: {toggle: "dropdown"} do %>
+            <%= current_user.name %><b class="caret"></b>
+            <% end %>
+          <ul class="dropdown-menu">
+            <li><%= link_to t("admin_header.profile"), "#" %></li>
+            <li class="divider"></li>
+            <li><%= link_to t("admin_header.log_out"), "#" %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

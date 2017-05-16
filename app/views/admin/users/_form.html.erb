@@ -1,8 +1,5 @@
-<h1><%= t "sign_up" %></h1>
-
-<%= form_for resource, as: resource_name,
-  url: registration_path(resource_name) do |f| %>
-  <%= render "shared/error_message_user", object: @user %>
+<%= form_for [:admin, @admin_user], html: {multipart: true} do |f| %>
+  <%= render "error_message", object: @admin_user %>
 
   <div class="field">
     <%= f.label :name %>
@@ -28,6 +25,11 @@
       class: "form-control" %>
   </div>
 
+  <div class="field">
+    <%= f.label :role %></br>
+    <%= show_select_option_role f %>
+  </div>
+
   <div class="pictures">
     <p><%= f.label :avatar %></p>
     <p>
@@ -36,13 +38,10 @@
     <span class="btn btn-default btn-file">
       <%= f.file_field :avatar_url, id: "avatar-upload",
         accept: "image/png, image/gif, image/jpeg" %>
-      <%= f.hidden_field :avatar_url_cache %>
     </span>
   </div>
 
   <div class="actions">
-    <%= f.submit t("sign_up"), class: "btn btn-primary btn-actions" %>
+    <%= f.submit yield(:button_text), class: "btn btn-primary btn-actions" %>
   </div>
 <% end %>
-
-<%= render "users/shared/links" %>

@@ -1,0 +1,14 @@
+<%= provide :title, t("editing_user") %>
+<%= provide :button_text, t("update_user") %>
+
+<h1><%= t "editing_user" %></h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= render "form", admin_user: @admin_user %>
+    </div>
+  </div>
+</div>
+
+<%= link_to t("back_to_list"), admin_users_path %>

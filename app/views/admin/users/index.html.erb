@@ -1,0 +1,55 @@
+<% provide :title, t("users") %>
+
+<h1><%= t "users" %></h1>
+
+<div class="container">
+  <div class="row">
+    <%= form_tag admin_users_path, method: :get do %>
+      <%= render "shared/search_form" %>
+    <% end %>
+  </div>
+</div>
+
+</br>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><%= t "name" %></th>
+          <th><%= t "email" %></th>
+          <th><%= t "avatar" %></th>
+          <th><%= t "role" %></th>
+          <th><%= t "operation" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @admin_users.each do |admin_user| %>
+          <tr>
+            <td><%= admin_user.name %></td>
+            <td><%= admin_user.email %></td>
+            <td>
+              <%= image_tag admin_user.avatar_url_url, alt: t("avatar_picture"),
+                class: "img-index-user" %>
+            </td>
+            <td>
+              <%= admin_user.role %>
+            </td>
+            <td>
+              <%= link_to t("show"), admin_user_path(admin_user) %> |
+              <%= link_to t("edit"), edit_admin_user_path(admin_user) %> |
+              <%= link_to t("delete"), admin_user_path(admin_user), method: :delete,
+                data: {confirm: t("are_you_sure")} %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="paginate-view">
+      <%= paginate @admin_users, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
+  </br>
+  <%= link_to t("back_to_list"), admin_users_path %> |
+  <%= link_to t("create_new_user"), new_admin_user_path %>
+</div>

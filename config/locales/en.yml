@@ -50,3 +50,40 @@ en:
   characters_minimum: "characters minimum"
   update_profile: "Update Profile"
   error: error
+  subject:
+    create_success: "Created Subject Successful"
+    update_success: "Updated Subject Successful"
+    delete_success: "Deleted Subject Successful"
+    delete_fail: "Deleted Subject Failure"
+    not_found: "Subject Not Found"
+    create_new_title: "Create New Subject"
+    subject_name: "Subject Name"
+    subject_description: Subject Description
+    add_task: "Add Task"
+    delete_subject_btn: "Delete"
+    edit_subject_btn: "Edit"
+    task_name: "Task Name"
+    task_description: "Task Description"
+    edit_subject_title: "Edit Subject"
+    edit_subject: "Update"
+    all_subjects: "All Subject"
+    name: "Name"
+    description: "Description"
+    create_at: "Create At"
+    view: "View"
+    edit: "Edit"
+    delete: "Delete"
+    create: "Create"
+    list_task: "List Tasks"
+    subject_detail: "Subject Detail"
+  admin_header:
+    home: "Home"
+    courses: "Courses"
+    subjects: "Subjects"
+    trainees: "Trainees"
+    profile: "Profile"
+    log_out: "Log Out"
+
+  time:
+    formats:
+      DD_MM_YYYY_HH_MM: "%d/%m/%Y %H:%M"

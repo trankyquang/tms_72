@@ -24,6 +24,7 @@ gem "bootstrap-kaminari-views"
 gem "devise"
 gem "config"
 gem "cancancan"
+gem "paranoia", "~> 2.2"
 
 group :development, :test do
   gem "byebug", platform: :mri

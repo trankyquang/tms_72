@@ -1,0 +1,54 @@
+<%= provide :title, t("subject.subject_detail") %>
+<section id="subject-show" class="admin-show-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1><%= @subject.name %></h1>
+      </div>
+    </div>
+      <div class="row">
+      <div class="subject-show">
+        <div class="box-divider">
+          <div class="label-title">
+            <%= t "subject.description" %>
+          </div>
+          <p><%= @subject.description %></p>
+        </div>
+      </div>
+      <div class="render-task">
+        <div class="subject-task">
+          <div class="overview">
+            <%= t "subject.list_task" %>
+          </div>
+          <div class="note-list user-task-list">
+            <% @subject.tasks.each do |task| %>
+              <div class="note row">
+                <div class="col-md-1 td-image col-xs-1">
+                  <%= image_tag "task.png", class: "img-task" %>
+                </div>
+                <div class="col-md-10 col-xs-10">
+                  <div class="task-name">
+                    <%= task.name %>
+                  </div>
+                  <div class="task-description">
+                    <p><%= task.description %></p>
+                  </div>
+                </div>
+              </div><hr>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <%= link_to edit_admin_subject_path(@subject) do %>
+        <span class="glyphicon glyphicon-edit"></span>
+        <%= t "subject.edit" %>
+      <% end %>
+      <%= link_to [:admin, @subject], method: :delete,
+        data: {confirm: t(".confirm_delete")} do %>
+        <span class="glyphicon glyphicon-trash"></span>
+        <%= t "subject.delete" %>
+      <% end %>
+    </div>
+</section>

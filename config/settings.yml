@@ -2,3 +2,8 @@ password:
   minimum: 6
 avatar:
   size_resize: 400
+validates:
+  subject_name_max_length: 20
+  subject_description_max_length: 40
+paginate:
+  subjects_per_page: 10

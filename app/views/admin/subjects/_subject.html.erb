@@ -1,0 +1,28 @@
+<tr>
+  <td class="text-center">
+    <%= link_to subject.name, admin_subject_path(subject) %>
+  </td>
+  <td class="text-center"><%= subject.description %></td>
+  <td class="text-center">
+    <%= l subject.created_at, format: :DD_MM_YYYY_HH_MM %>
+  </td>
+  <td class="text-center">
+    <%= link_to admin_subject_path(subject), class: "text-success" do %>
+      <span class="glyphicon glyphicon-search"></span>
+      <%= t "subject.view" %>
+    <% end %>
+  </td>
+  <td class="text-center">
+    <%= link_to edit_admin_subject_path(subject) do %>
+      <span class="glyphicon glyphicon-edit"></span>
+      <%= t "subject.edit_subject_btn" %>
+    <% end %>
+  </td>
+  <td class="text-center">
+    <%= link_to admin_subject_path(subject), method: :delete,
+      data: {confirm: t("are_you_sure")}, class: "text-danger" do %>
+      <span class="glyphicon glyphicon-trash"></span>
+      <%= t "subject.delete_subject_btn" %>
+    <% end %>
+  </td>
+</tr>

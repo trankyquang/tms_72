@@ -1,5 +1,8 @@
-<header id="navigation" class = "navbar-fixed-top">
+<header class="navbar navbar-fixed-top navbar-inverse">
   <div class = "container">
+    <%= link_to (image_tag "logo.png", class: "image-logo"), admin_root_path,
+      id: "logo" %>
+
     <div class = "navbar-header">
       <button type="button" class = "navbar-toggle" data-toggle="collapse"
         data-target=".navbar-collapse">
@@ -8,30 +11,31 @@
         <span class = "icon-bar"></span>
         <span class = "icon-bar"></span>
       </button>
-      <h1 class = "navbar-brand">
-        <%= link_to image_tag("logo.png"), "#" %>
-      </h1>
     </div>
+
     <nav class = "collapse navigation navbar-collapse navbar-right"
       role="navigation">
       <ul id="nav" class = "nav navbar-nav">
-        <li><%= link_to t("admin_header.home"), "#" %></li>
-        <li><%= link_to t("admin_header.courses"), "#" %></li>
+        <li><%= link_to t("admin_header.home"), admin_root_path %></li>
+        <li><%= link_to t("admin_header.courses"), admin_courses_path %></li>
         <li><%= link_to t("admin_header.subjects"), admin_subjects_path %></li>
-        <li><%= link_to t("admin_header.trainees"), "#" %></li>
+        <li><%= link_to t("users"), admin_users_path %></li>
         <li class="dropdown">
           <%= link_to "#", class: "dropdown-toggle",
             data: {toggle: "dropdown"} do %>
             <%= current_user.name %><b class="caret"></b>
             <% end %>
           <ul class="dropdown-menu">
-            <li><%= link_to t("admin_header.profile"), "#" %></li>
+            <li><%= link_to t("admin_header.profile"),
+              edit_admin_user_path(current_user) %></li>
             <li class="divider"></li>
-            <li><%= link_to t("admin_header.log_out"), "#" %>
+            <li><%= link_to t("admin_header.log_out"), destroy_user_session_path,
+              method: :delete %>
             </li>
           </ul>
         </li>
       </ul>
     </nav>
+
   </div>
 </header>

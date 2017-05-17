@@ -1,4 +1,5 @@
 class Admin::SubjectsController < ApplicationController
+
   layout "admin_application"
   before_action :load_subject, except: [:index, :create, :new]
 

@@ -2,6 +2,12 @@
 
 <h1><%= t "user_detail" %></h1>
 <div class="container">
+  <p>
+    <%= link_to admin_users_path, class: "btn btn-success" do %>
+      <%= t "back_to_list" %>
+      <span class="glyphicon glyphicon-list"></span>
+    <% end %>
+  </p>
   <div class="table-responsive">
     <table class="table">
       <thead>
@@ -26,6 +32,4 @@
       </tbody>
     </table>
   </div>
-  </br>
-  <%= link_to t("back_to_list"), admin_users_path %>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= t "title_project" %></title>
+    <title><%= full_title (yield :title) %></title>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "icon.png" %>
     <%= stylesheet_link_tag "application", media: "all",
@@ -10,8 +10,10 @@
       "data-turbolinks-track": "reload" %>
   </head>
   <body>
-    <%= render "layouts/admin_header" %>
-    <%= yield %>
-    <%= render "layouts/footer" %>
+    <div class="container">
+      <%= render "layouts/admin_header" %>
+      <%= yield %>
+      <%= render "layouts/footer" %>
+    </div>
   </body>
 </html>

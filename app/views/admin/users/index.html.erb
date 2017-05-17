@@ -12,8 +12,14 @@
 
 </br>
 <div class="container">
+  <p>
+    <%= link_to new_admin_user_path, class: "btn btn-info" do %>
+      <%= t "create_new_user" %>
+      <span class="glyphicon glyphicon-plus"></span>
+    <% end %>
+  </p>
   <div class="table-responsive">
-    <table class="table">
+    <table class="table table-hover">
       <thead>
         <tr>
           <th><%= t "name" %></th>
@@ -36,10 +42,13 @@
               <%= admin_user.role %>
             </td>
             <td>
-              <%= link_to t("show"), admin_user_path(admin_user) %> |
-              <%= link_to t("edit"), edit_admin_user_path(admin_user) %> |
-              <%= link_to t("delete"), admin_user_path(admin_user), method: :delete,
-                data: {confirm: t("are_you_sure")} %>
+              <% if admin_user.trainee? || admin_user.supervisor? %>
+                <%= link_to t("edit"), edit_admin_user_path(admin_user),
+                  class: "glyphicon glyphicon-edit" %> |
+                <%= link_to t("delete"), admin_user_path(admin_user),
+                  method: :delete, data: {confirm: t("are_you_sure")},
+                  class: "glyphicon glyphicon-trash text-danger" %>
+              <% end %>
             </td>
           </tr>
         <% end %>
@@ -50,6 +59,4 @@
     </div>
   </div>
   </br>
-  <%= link_to t("back_to_list"), admin_users_path %> |
-  <%= link_to t("create_new_user"), new_admin_user_path %>
 </div>

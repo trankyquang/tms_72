@@ -17,4 +17,11 @@ class ApplicationController < ActionController::Base
         :current_password, :avatar_url
     end
   end
+
+  def verify_admin
+    if current_user.trainee?
+      flash[:danger] = t "permission_denied"
+      redirect_to root_url
+    end
+  end
 end

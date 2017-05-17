@@ -1,0 +1,43 @@
+<tr>
+  <td class = "text-center">
+    <%= link_to course.name, admin_course_path(course) %>
+  </td>
+  <td class = "text-center"><%= l course.start_date, format: :DD_MM_YYYY_HH_MM %></td>
+  <td class = "text-center"><%= l course.end_date, format: :DD_MM_YYYY_HH_MM %></td>
+  <td class = "text-center">
+    <span class="label label-outline label-<%= course.status %>">
+      <%= course.status %>
+    </span>
+  </td>
+  
+  <td class="text-center">
+    <%= link_to admin_course_path(course), class: "text-success" do %>
+      <span class="glyphicon glyphicon-search"></span>
+      <%= t "course.view_btn" %>
+    <% end %>
+  </td>
+
+  <td class="text-center">
+    <%= link_to edit_admin_course_path course do %>
+      <span class="glyphicon glyphicon-edit"></span><%= t "course.edit" %>
+    <% end %>
+  </td>
+
+  <td class="text-center">
+    <% if course.subjects.any? %>
+      <%= link_to admin_course_path(course), method: :delete,
+        data: {confirm: t("course.confirm")},
+        class: "text-danger" do %>
+        <span class="glyphicon glyphicon-trash"></span>
+        <%= t "course.delete_btn" %>
+      <% end %>
+    <% else %>
+      <%= link_to admin_course_path(course), method: :delete,
+        data: {confirm: t("course.confirm")},
+        class: "text-danger" do %>
+        <span class="glyphicon glyphicon-trash"></span>
+        <%= t "course.delete_btn" %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

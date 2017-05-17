@@ -1,0 +1,62 @@
+<fieldset>
+  <div class="col-md-12">
+    <div class="form-group">
+      <%= render "shared/error_messages", object: f.object %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :name, class: "col-md-12" %>
+      <div class="col-md-12">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-user"></i>
+          </span>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, class: "col-md-12" %>
+      <div class="col-md-12">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-pencil"></i>
+          </span>
+          <%= f.text_area :description, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :start_date, class: "col-md-12" %>
+      <div class="col-md-12">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </span>
+          <%= f.date_select :start_date, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :end_date, class: "col-md-12" %>
+      <div class="col-md-12">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </span>
+          <%= f.date_select :end_date, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-12 control-label"></label>
+      <div class="col-md-12">
+        <%= f.submit yield(:submit_button), class: "btn btn-info" %>
+      </div>
+    </div>
+  </div>
+</fieldset>

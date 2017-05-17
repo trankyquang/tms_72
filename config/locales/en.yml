@@ -86,6 +86,10 @@ en:
   android_description: "Learn how to design and develop great Android apps through courses built by Android experts at Framgia can help you develop."
   ios: "iOS"
   ios_description: "Try building iOS applications for iPhone and iPad mobile devices. Learn the basics of iOS development and bring your app ideas to life."
+  remove_subject_to_course_success: "Remove subject to course success!"
+  remove_subject_to_course_fail: "Remove subject to course fail!"
+  add_subject_to_course_success: "Add subject to course success!"
+  add_to_this_course: "Add to this course"
   subject:
     create_success: "Created Subject Successful"
     update_success: "Updated Subject Successful"
@@ -119,6 +123,39 @@ en:
     trainees: "Trainees"
     profile: "Profile"
     log_out: "Log Out"
+  course:
+    create_success: "Create Course Successful"
+    update_success: "Update Course Successful"
+    update_fail: "Update Course Failure"
+    cannot_delete: "Cannot Delete Course"
+    delete_success: "Delete Course Successful"
+    delete_fail: "Delete Course Failure"
+    course_not_found: "Course not Found"
+    start_at: "Start at: "
+    end_at: "End at: "
+    status: "Status"
+    start_btn: "Start"
+    finish_btn: "Finish"
+    confirm: "Are you sure?"
+    view_btn: "View"
+    delete_btn: "Delete"
+    edit: "Edit"
+    subject_name: "Subject"
+    edit_course: "Edit Course"
+    update: "Update"
+    create: "Create"
+    courses_management: "Courses Management"
+    create_new: "Create New Course"
+    course_name: "Course"
+    start_date: "Start Date"
+    end_date: "End Date"
+    subject: "subject"
+
+  status:
+    pending: "pending"
+    started: "started"
+    finished: "finished"
+
 
   time:
     formats:

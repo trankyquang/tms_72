@@ -239,3 +239,22 @@ footer {
 .col-md-6-box:hover {
   background-color: #e5e5e5;
 }
+
+.label-pending {
+  background-color: yellow;
+  color: black;
+}
+
+.label-started {
+  background-color: green;
+}
+
+.label-finished {
+  background-color: gray;
+}
+
+.subject-name-custom {
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+}

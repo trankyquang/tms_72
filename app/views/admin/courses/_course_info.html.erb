@@ -1,0 +1,17 @@
+<h4><%= @course.name %></h4>
+<p><%= @course.description %></p>
+<p>
+  <strong><%= t "course.start_at" %></strong>
+  <%= l @course.start_date, format: :DD_MM_YYYY_HH_MM %>
+</p>
+<p>
+  <strong><%= t "course.end_at" %></strong>
+  <%= l @course.end_date, format: :DD_MM_YYYY_HH_MM %>
+</p>
+<p>
+  <strong><%= t "course.status" %></strong>
+  <span id = "course-status">
+  <span class="label label-outline label-<%= @course.status %>">
+    <%= @course.status %>
+  </span>
+</p>

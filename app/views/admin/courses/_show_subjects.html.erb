@@ -1,0 +1,29 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "name" %></th>
+        <th><%= t "description" %></th>
+        <th><%= t "operation" %></th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @subjects.each do |subject| %>
+        <% if !load_course_subject(subject.id).present? %>
+          <tr>
+            <td><%= subject.name %></td>
+            <td><%= subject.description %></td>
+            <td>
+              <%= form_for :course_subject, url: admin_course_subjects_path do |f| %>
+                <%= f.hidden_field :course_id, value: @course.id %>
+                <%= f.hidden_field :subject_id, value: subject.id %>
+                <%= f.submit t "add_to_this_course" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

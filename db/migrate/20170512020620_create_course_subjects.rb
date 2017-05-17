@@ -4,7 +4,7 @@ class CreateCourseSubjects < ActiveRecord::Migration[5.0]
     create_table :course_subjects do |t|
       t.integer :course_id
       t.integer :subject_id
-      t.integer :status
+      t.integer :status, default: 0
       t.timestamps
     end
   end

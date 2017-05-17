@@ -1,0 +1,63 @@
+<% provide :title, t("home_title") %>
+<%= provide :title_header, "Course Details" %>
+<section id="service" class="admin-section">
+  <div class="container">
+    <div class="row">
+      <%= render "admin/shared/title_header" %>
+      <div class="col-md-6">
+        <div class="panel-body">
+          <div class="well well-lg">
+            <%= render "course_info" %>
+            <%= link_to t("course.update"), edit_admin_course_path(@course),
+              class: "btn btn-warning" %>
+            <% if @course.subjects.any? %>
+              <%= link_to t("course.delete_btn"), admin_course_path(@course),
+                method: :delete, class: "btn btn-danger",
+                data: {confirm: "confirm_delete"} %>
+            <% else %>
+              <%= link_to t("course.delete_btn"), admin_course_path(@course),
+                method: :delete, data: {confirm: "confirm_delete"},
+                class: "btn btn-danger" %>
+            <% end %>
+
+            <% unless @course.finished? %>
+              <% if @course.pending? %>
+                <% unless @trainees_are_in_active.any? %>
+                  <%= link_to admin_course_path(@course,
+                    {course: {status: "started"}}), data: {confirm: t("course.confirm")},
+                    class: "btn btn-success margin-top-fix",
+                    method: :put  do %>
+                    <i class="fa fa-hourglass-start" aria-hidden="true"></i>
+                    <%= t "course.start_btn" %>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <%= link_to admin_course_path(@course,
+                  {course: {status: "finished"}}), data: {confirm: t("course.confirm")},
+                  class: "btn btn-success margin-top-fix",
+                  method: :put  do %>
+                  <i class="fa fa-hourglass-end" aria-hidden="true"></i>
+                  <%= t "course.finish_btn" %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+          
+          <div class="well well-lg">
+            <h4>
+              <i class="fa fa-list-alt" aria-hidden="true"></i>
+              <%= "Total Subjects: " %>
+              <%= pluralize  @course.course_subjects.count, t("course.subject") %>
+            </h4>
+            <hr>
+              <%= render "course_subjects" %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <%= render "show_subjects" %>
+      </div>
+    </div>
+  </div>
+</section>

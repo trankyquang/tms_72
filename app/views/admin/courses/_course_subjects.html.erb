@@ -1,0 +1,44 @@
+<ul class="timeline-custom">
+  <% @course.course_subjects.each do |course_subject| %>
+    <li>
+      <div class="timeline-custom-panel">
+        <div class="timeline-custom-heading">
+          <h4 class="timeline-custom-title">
+            <%= link_to course_subject.subject.name,
+              admin_subject_path(course_subject.subject.id) %>
+          </h4>
+        </div>
+        <div class="timeline-custom-body">
+          <p><%= course_subject.subject.description %></p>
+          <span class="label label-info"><%= course_subject.status %></span>
+          <span class="label label-warning"><%= link_to t("delete"),
+            admin_course_subject_path(course_subject), method: :delete,
+            remote: true %>
+          </span>
+          <hr>
+          <div class="btn-group">
+            <% if @course.started? %>
+              <% unless course_subject.finished? %>
+                <% if course_subject.pending? %>
+                  <%= link_to admin_course_subject_path(course_subject,
+                    {course_subject: {status: "started"}}), method: :put,
+                    data: {confirm: t("course.confirm")}, class: "btn btn-success" do %>
+                    <i class="fa fa-hourglass-start" aria-hidden="true"></i>
+                    <%= t "course.start_btn" %>
+                  <% end %>
+                <% else %>
+                  <%= link_to admin_course_subject_path(course_subject,
+                    {course_subject: {status: "finished"}}), method: :put,
+                    data: {confirm: t("course.confirm")}, class: "btn btn-success" do %>
+                    <i class="fa fa-hourglass-end" aria-hidden="true"></i>
+                    <%= t "course.finish_btn" %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

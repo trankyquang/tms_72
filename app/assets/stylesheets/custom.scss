@@ -159,3 +159,83 @@ footer {
 .search-query:focus + button {
   z-index: 3;
 }
+
+.image-logo {
+  width: 60px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+.header-learning-program {
+  font-size: 60px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.image-smooth-scroll {
+  width: 100%;
+  height: 100%;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.box-learning-program {
+  background-color: #e5e5e5;
+}
+
+.name-learning-program {
+  padding-top: 5px;
+  text-align: center;
+  color: #191919;
+  font-size: 36px;
+}
+
+.description-learning-program {
+  margin-top: 5px;
+  text-align: center;
+  color: #999999;
+  font-size: 20px;
+  padding: 2px;
+}
+
+.image-smooth-scroll-detail {
+  width: 100%;
+  padding: 3px;
+}
+
+.header-learning-program-detail {
+  font-size: 36px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.header-first {
+  margin-top: 50px;
+}
+
+.image-programming-language {
+  width: 30%;
+  float: left;
+}
+
+.content-programming-language {
+  width: 68%;
+  float: right;
+}
+
+.header-content-programming-language {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.col-md-6-box {
+  padding-top: 30px;
+  border-style: solid;
+  border-width: 1px 0px 0px 1px;
+  border-color: #00bf00;
+}
+
+.col-md-6-box:hover {
+  background-color: #e5e5e5;
+}

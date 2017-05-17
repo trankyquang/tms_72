@@ -7,8 +7,8 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <%= render "form", admin_user: @admin_user %>
+      <br/>
+      <%= link_to t("back_to_list"), admin_users_path %>
     </div>
   </div>
 </div>
-
-<%= link_to t("back_to_list"), admin_users_path %>

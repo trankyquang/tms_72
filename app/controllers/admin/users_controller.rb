@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
 
+  layout "admin_application"
   before_action :load_admin_user, except: [:index, :new, :create]
 
   def index

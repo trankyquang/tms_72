@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="header-learning-program">
+    <%= t "learning_programs" %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="smooth-scroll box-learning-program">
+        <%= link_to "", href: "#new-dev" do %>
+          <div class="name-learning-program">
+            <%= t "new_dev" %>
+          </div>
+          <div class="description-learning-program">
+            <%= t "new_dev_description" %>
+          </div>
+          <hr/>
+          <%= image_tag "newdev.png", atl: t("new_dev"),
+            class: "image-smooth-scroll" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="smooth-scroll box-learning-program">
+        <%= link_to "", href: "#intern" do %>
+          <div class="name-learning-program">
+            <%= t "intern" %>
+          </div>
+          <div class="description-learning-program">
+            <%= t "intern_description" %>
+          </div>
+          <hr/>
+          <%= image_tag "intern.png", atl: t("intern"),
+            class: "image-smooth-scroll" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="smooth-scroll box-learning-program">
+        <%= link_to "", href: "#open-edu" do %>
+          <div class="name-learning-program">
+            <%= t "open_education" %>
+          </div>
+          <div class="description-learning-program">
+            <%= t "open_education_description" %>
+          </div>
+          <hr/>
+          <%= image_tag "edu.png", atl: t("open_education"),
+            class: "image-smooth-scroll" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

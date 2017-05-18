@@ -2,6 +2,7 @@ class Admin::SubjectsController < ApplicationController
 
   layout "admin_application"
   before_action :load_subject, except: [:index, :create, :new]
+  load_and_authorize_resource
 
   def index
     @subjects = Subject.recent.page(params[:page]).per Settings.paginate.subjects_per_page

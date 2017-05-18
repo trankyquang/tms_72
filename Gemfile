@@ -23,8 +23,12 @@ gem "ransack"
 gem "bootstrap-kaminari-views"
 gem "devise"
 gem "config"
-gem "cancancan"
+gem "cancancan", "1.10"
 gem "paranoia", "~> 2.2"
+gem "sidekiq"
+gem "sidekiq_mailer"
+gem 'sinatra', require: false
+gem "whenever", require: false
 
 group :development, :test do
   gem "byebug", platform: :mri

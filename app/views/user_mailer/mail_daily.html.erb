@@ -1,0 +1,16 @@
+<h1><%= t "mailer.welcome", name: @supervisor.name %></h1>
+<div class="panel panel-default text-center">
+  <div class="row">
+    <% if @user_tasks.any? %>
+      <% @user_tasks.each do |user_task| %>
+        <%= t "mailer.trainee", trainee_name: user_task.user.name %>
+        <%= t "mailer.task_finish", task_name: user_task.task.name %>
+        <%= t "mailer.on_subject", subject_name: user_task.user_subject.subject.name %>
+        <%= t "mailer.in_course",
+          course_name: user_task.user_subject.user_course.course.name %>
+      <% end %>
+    <% else %>
+      <%= t "mailer.not_report" %>
+    <% end %>
+  </div>
+</div>

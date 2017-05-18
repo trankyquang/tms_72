@@ -2,6 +2,7 @@ class Admin::UsersController < ApplicationController
 
   layout "admin_application"
   before_action :load_admin_user, except: [:index, :new, :create]
+  load_and_authorize_resource
 
   def index
     @admin_users = User.search_by_name_and_email(params[:search]).

@@ -123,3 +123,17 @@ en:
   time:
     formats:
       DD_MM_YYYY_HH_MM: "%d/%m/%Y %H:%M"
+
+  mailer:
+    welcome: "Hi %{name}"
+    thanks: "Thanks for joining with us"
+    horizontal: "---------------------------------------------"
+    sorry: "See you again"
+    assign_to_course: "You has been assigned to a course: %{name}"
+    reject_from_course: "You has been rejected from a course: %{name}"
+    trainee: "Trainee: %{trainee_name}"
+    task_finish: "has finished task: %{task_name} "
+    on_subject: "on Subject: %{subject_name}"
+    in_course: "in Course: %{course_name}"
+    not_report: "Today has not report"
+    mail_daily: "[TMS72][Daily mail] Information tasks of Trainee"
